@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #666;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 10px;
+        }
+
+        .feature h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .bowl-image {
+            grid-column: span 2;
+            text-align: center;
+        }
+
+        .bowl-image img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .cta-button {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .cta-button button {
+            background-color: #ff6b4a;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 60px 0;
+            align-items: center;
+        }
+
+        .stats-content h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff6b4a;
+            margin-right: 15px;
+        }
+
+        .stat-text {
+            color: #666;
+        }
+        .stat-image{ 
+            position: relative;
+            height: 400px;
+        }
+   
+
+        .stats-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            
+        }
+      
+        .stats-description {
+            color: #666;
+            line-height: 1.6;
+            margin: 20px 0;
+         }
+         .orange-button {
+            background-color: #ff6b4a;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 10px;
+           display: inline-block;
+           
+           
+        }
+        .key-points {
+            font-weight: bold;
+            margin: 30px 0 20px;
+            color: #333;
+            font-size: 18px;
+        }
+        .section-button {
+            text-align: center;
+            margin-top: 20px;
+            width:100%
+          
+        }
+        .payment-section {
+            text-align: center;
+            margin: 15px 0 40px;
+            padding: 10px;
+        }
+
+        .payment-methods {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 15px;
+            background-color: #f8f8f8;
+            border-radius: 20px;
+        }
+
+        .payment-methods img {
+            height: 20px;
+            object-fit: contain;
+        }
+
+        .payment-text {
+            color: #666;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        
+        .payment-separator {
+            width: 4px;
+            height: 4px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+
+        .benefits-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 60px 0;
+            align-items: center;
+        }
+         .benefits-image{
+             width: 100%;
+             height: 300px;
+         }
+        .benefits-image img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover
+        }
+
+        .benefits-content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .benefits-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .prebiotics-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 60px 0;
+            align-items: center;
+        }
+
+        .prebiotics-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .stats-section,
+            .benefits-section,
+            .prebiotics-section {
+                flex-template-columns: 1fr;
+            }
+            .stats-image,
+            .benefits-image {
+                height: 250px;
+                margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>What makes us different</h1>
+        <p>makes them stronger</p>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <img src="/storage/emulated/0/Landing Page/images/Real.jpg" alt="Real Food" class="feature-icon">
+            <h3>Real Food</h3>
+            <p>Nutritious ingredients for dogs</p>
+        </div>
+        <div class="feature">
+            <img src=" /storage/emulated/0/Landing Page/images/Premium.jpg" alt="Premium" class="feature-icon">
+            <h3>Premium Ingredient</h3>
+            <p>Quality you can trust</p>
+        </div>
+        <div class="bowl-image">
+            <img src="/storage/emulated/0/Landing Page/images/Food.jpg" alt="Dog Food Bowl">
+        </div>
+        <div class="feature">
+            <img src="/storage/emulated/0/Landing Page/images/Fresh.jpg" alt="Made Fresh" class="feature-icon">
+            <h3>Made Fresh</h3>
+            <p>Fresh ingredients daily</p>
+        </div>
+        <div class="feature">
+            <img src="/storage/emulated/0/Landing Page/images/Vet.jpg" alt="Vet Developed" class="feature-icon">
+            <h3>Vet Developed</h3>
+            <p>Professionally formulated</p>
+        </div>
+    </div>
+
+    <div class="cta-button">
+        <button>Get your dog tested today!</button>
+      <div class="payment-methods">
+          <img src="/storage/emulated/0/Landing Page/images/Paypal.png" alt="Paypal">
+        <img src="/storage/emulated/0/Landing Page/images/Visa.png" alt="Visa">
+        <img src="/storage/emulated/0/Landing Page/images/MasterCard.png" alt="Mastercard">
+        <img src="/storage/emulated/0/Landing Page/images/Applepay.png"alt="American Express">
+        <img src="/storage/emulated/0/Landing Page/images/GooglePay.png"alt="Other payment methods">
+    </div>
+    </div>
+
+    <div class="stats-section">
+        <div class="stats-content">
+            <h2>Nutrition is the foundation for longer, healthier lives in dogs.</h2>
+          <p class="stats-description">
+                Recent studies show that by following our scientifically formulated nutrition plan, 
+                dogs can experience significant improvements in their digestive health. Our research, 
+                conducted over multiple years with various breeds and ages, demonstrates the effectiveness 
+                of our approach in promoting optimal gut health and nutrient absorption.
+            </p>
+               <h3 class="key-points">Key Points:</h3>
+            <div class="stat">
+                <span class="stat-number">97%</span>
+                <span class="stat-text">Dogs show improved digestive health</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">84%</span>
+                <span class="stat-text">Better nutrient absorption reported</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">92%</span>
+                <span class="stat-text">Overall satisfaction rate</span>
+            </div>
+        </div>
+        <div class="stats-image">
+            <img src="/storage/emulated/0/Landing Page/images/Dog.png" alt="Happy Dog">
+        </div>
+        <div class="section-button">
+                <button class="orange-button">See your PETS food and get sample nutrients</button>
+            </div>
+    </div>
+
+    <div class="benefits-section">
+        <div class="benefits-image">
+            <img src="/storage/emulated/0/Landing Page/images/Double dogs.jpg"" alt="Dogs Eating">
+        </div>
+        <div class="benefits-content">
+            <h2>Improve overall gastrointestinal health for better nutrient absorption</h2>
+            <p>Our specialized formula supports optimal digestive function and nutrient uptake for your pet's health.</p>
+        </div>
+      <div class="section-button">
+                <button class="orange-button">Learn more about digestive health</button>
+            </div>
+    </div>
+
+    <div class="prebiotics-section">
+        <div class="benefits-content">
+            <h2>Prebiotics nourish the beneficial gut bacteria</h2>
+            <p>Supporting digestive health through advanced prebiotic technology</p>
+        </div>
+        <div class="prebiotics-image">
+            <img src="/storage/emulated/0/Landing Page/images/Dog food2.jpg" alt="Food Texture">
+        </div>
+      <div class="section-button">
+                <button class="orange-button">Discover our prebiotic formula</button>
+            </div>
+    </div>
+</body>
+</html>
